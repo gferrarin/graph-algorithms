@@ -30,14 +30,14 @@ public class Graph {
      */
 	
 	private int n;
-	private HashMap<Integer, HashMap<Integer, Integer>> edges;
+	private Map<Integer, HashMap<Integer, Integer>> edges;
 	
     public Graph(int n) {
     	if (n < 0) {
     		throw new IllegalArgumentException();
     	}
     	
-    	edges= new HashMap<Integer, HashMap<Integer, Integer>>();
+    	edges = new HashMap<Integer, HashMap<Integer, Integer>>();
     	this.n = n;
     	
     	for (int i = 0; i < n; i++) {
@@ -98,7 +98,7 @@ public class Graph {
         	throw new IllegalArgumentException();
         }
         
-        return (this.edges.get(u).containsKey(v));
+        return this.edges.get(u).containsKey(v);
     }
 
     /**
@@ -128,10 +128,6 @@ public class Graph {
     	
     	// check if edge already exists
     	if (this.edges.get(u).containsKey(v)) {
-    		/*System.out.println(u);
-    		System.out.println(v);
-    		
-    		System.out.print(this.edges.get(u).get(v)); */
     		return false;
     	}
     	
